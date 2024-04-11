@@ -25,13 +25,20 @@ public class Hello {
         return "hello";
     }
     @GetMapping("/hello-param")
-    public String helloParam(@RequestParam("name") String name1,
+    public String helloParam(@RequestParam("name") String name,
                              @RequestParam("age")String age,
-                             @RequestParam("grade")String grade,
-                             @RequestParam("grade")String hob, Model model){
-        model.addAttribute("hob",hob);
-        model.addAttribute("nameKey",name1);
+                             @RequestParam("grade")String grade, Model model){
+        model.addAttribute("nameKey",name);
         model.addAttribute("age",age);
+        model.addAttribute("grade",grade);
+        return "hello";
+    }
+    @GetMapping("/hello/sungyoon")
+    public String connectSung(@RequestParam("name") String name,
+                              @RequestParam("age") String age,
+                              @RequestParam("grade") String grade, Model model) {
+        model.addAttribute("nameKey",name);
+        model.addAttribute("age", age);
         model.addAttribute("grade",grade);
         return "hello";
     }
