@@ -29,6 +29,8 @@ public class Hello {
                              @RequestParam("age")String age,
                              @RequestParam("grade")String grade,
                              @RequestParam("hob")String hob, Model model){
+
+
         model.addAttribute("nameKey",name);
         model.addAttribute("age",age);
         model.addAttribute("grade",grade);
