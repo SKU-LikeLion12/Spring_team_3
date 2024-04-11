@@ -27,10 +27,12 @@ public class Hello {
     @GetMapping("/hello-param")
     public String helloParam(@RequestParam("name") String name,
                              @RequestParam("age")String age,
-                             @RequestParam("grade")String grade, Model model){
+                             @RequestParam("grade")String grade,
+                             @RequestParam("hob")String hob, Model model){
         model.addAttribute("nameKey",name);
         model.addAttribute("age",age);
         model.addAttribute("grade",grade);
+        model.addAttribute("hob",hob);
         return "hello";
     }
 }
